@@ -1,9 +1,9 @@
 App.game = App.cable.subscriptions.create "GameChannel",
   connected: ->
-    $("body").append("<p>Connected</p>")
+    $("#result").append("<p>Connected</p>")
 
   disconnected: ->
-    $("body").append("<p>Disconnected</p>")
+    $("#result").append("<p>Disconnected</p>")
 
   received: (data) ->
-    $("body").append(data)
+    $("#result").append(data)
