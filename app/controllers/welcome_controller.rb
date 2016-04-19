@@ -5,9 +5,8 @@ class WelcomeController < ApplicationController
 
   def results
     cookies[:hacked_uuid] = SecureRandom.uuid if cookies[:hacked_uuid].empty?
-
     uuid = cookies[:hacked_uuid]
     url = params[:url]
-    BackendMessager.new(uuid)
+    BackendMessager.new(uuid).send(url)
   end
 end
