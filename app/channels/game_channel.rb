@@ -2,9 +2,10 @@
 class GameChannel < ApplicationCable::Channel
   def subscribed
     stream_from "user_#{uuid}"
+    ChannelManager.add_channel(uuid)
   end
 
   def unsubscribed
-    # Any cleanup needed when channel is unsubscribed
+    ChannelManager.remove_channel(uuid)
   end
 end

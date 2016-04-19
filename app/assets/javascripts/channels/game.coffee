@@ -1,9 +1,10 @@
 App.game = App.cable.subscriptions.create "GameChannel",
   connected: ->
-    # Called when the subscription is ready for use on the server
+    $("body").append("<p>Connected</p>")
 
   disconnected: ->
-    # Called when the subscription has been terminated by the server
+    $("body").append("<p>Disconnected</p>")
 
   received: (data) ->
-    # Called when there's incoming data on the websocket for this channel
+    alert(data)
+    $("body").append(data)
