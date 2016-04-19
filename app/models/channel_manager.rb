@@ -11,7 +11,8 @@ class ChannelManager
       return if uuid.nil?
       return unless @@channels.has_key?(uuid)
       puts "Broascasting... #{message.body}"
-      ActionCable.server.broadcast "user_#{uuid}", message.body
+      body = "<p>" + message.body
+      ActionCable.server.broadcast "user_#{uuid}", body
     end
 
     def remove_channel(uuid)
