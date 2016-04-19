@@ -6,5 +6,4 @@ App.game = App.cable.subscriptions.create "GameChannel",
     $("body").append("<p>Disconnected</p>")
 
   received: (data) ->
-    alert(data)
     $("body").append(data)

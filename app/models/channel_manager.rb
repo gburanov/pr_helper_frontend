@@ -7,10 +7,10 @@ class ChannelManager
     end
 
     def process(message)
-      byebug
       uuid = message.message_attributes["uuid"]&.string_value
       return if uuid.nil?
       return unless @@channels.has_key?(uuid)
+      puts "Broascasting... #{message.body}"
       ActionCable.server.broadcast "user_#{uuid}", message.body
     end
 
