@@ -3,6 +3,7 @@ set -x #echo on
 
 docker run \
   -p 80:3000 \
+  -p 28080:28080 \
   -e SECRET_KEY_BASE=MY_SECRET_KEY \
   -e RAILS_SERVE_STATIC_FILES=true \
   -e AWS_PRIVATE_ACCESS_KEY_ID=$AWS_PRIVATE_ACCESS_KEY_ID \

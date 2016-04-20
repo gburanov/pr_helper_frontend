@@ -4,12 +4,13 @@ module ApplicationCable
     identified_by :uuid
 
     def connect
+      puts "New connection"
       self.uuid = obtain_uuid
     end
 
     def obtain_uuid
       uuid = cookies[:hacked_uuid]
-      reject_unauthorized_connection if uuid.empty?
+      reject_unauthorized_connection if uuid.blank?
       return uuid
     end
   end
