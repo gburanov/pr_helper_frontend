@@ -13,3 +13,5 @@ module PrHelperFrontend
     # -- all .rb files in that directory are automatically loaded.
   end
 end
+
+Rails.application.config.action_cable.disable_request_forgery_protection = true
