@@ -16,6 +16,6 @@ COPY . ./
 # Expose the following ports:
 # - Port 3000 for the Rails web process
 # - Port 28080 for the ActionCable WebSocket server (Puma)
-EXPOSE 3000 28080
+#EXPOSE 3000 28080
 
-CMD ["./scripts/init.sh"]
+CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
