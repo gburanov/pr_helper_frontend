@@ -23,7 +23,7 @@ class BackendMessager
 
   def attributes
     {
-      uuid: uid
+      uuid: uuid
     }
   end
 end
