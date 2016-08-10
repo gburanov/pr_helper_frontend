@@ -2,3 +2,6 @@ language: ruby
 script:
   - bundle exec rspec
   - bundle exec rubocop
+
+notifications:
+  email: false
