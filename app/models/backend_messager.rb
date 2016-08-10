@@ -5,15 +5,25 @@ class BackendMessager
   end
 
   def send(url)
-    @client.send_message({
-      queue_url: "https://sqs.eu-west-1.amazonaws.com/062981245876/pr_helper_input",
+    @client.send_message(
+      queue_url: 'https://sqs.eu-west-1.amazonaws.com/062981245876/pr_helper_input',
       message_body: url,
-      message_attributes: {
-        "uuid" => {
-          string_value: @uuid,
-          data_type: "String", # required
-        },
-      },
-    })
+      message_attributes: attributes
+    )
+  end
+
+  private
+
+  def uuid
+    {
+      string_value: @uuid,
+      data_type: 'String', # required
+    }
+  end
+
+  def attributes
+    {
+      uuid: uid
+    }
   end
 end
