@@ -1,0 +1,8 @@
+Style/Documentation:
+  Enabled: false
+
+Metrics/ClassLength:
+  Max: 150
+
+Metrics/LineLength:
+  Max: 150
